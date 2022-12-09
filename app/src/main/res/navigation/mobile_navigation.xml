@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_dashboard">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.devicefinder2.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.devicefinder2.ui.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/userFragment_to_userDetailFragment"
+            app:destination="@+id/userDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.devicefinder2.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" >
+        <action
+            android:id="@+id/strengthFragment_to_strengthDetailFragment"
+            app:destination="@+id/strengthDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/userDetailsFragment"
+        android:name="com.example.devicefinder2.ui.dashboard.UserDetailsFragment"
+        android:label="User Details"
+        tools:layout="@layout/user_details" >
+        <action
+            android:id="@+id/action_userDetailFragment_to_usersFragment"
+            app:destination="@id/navigation_dashboard"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/strengthDetailsFragment"
+        android:name="com.example.devicefinder2.ui.notifications.StrengthDetailsFragment"
+        android:label="Strength Details"
+        tools:layout="@layout/strength_details" />
+
+    <fragment
+        android:id="@+id/navigation_calculation"
+        android:name="com.example.devicefinder2.ui.calculation.CalculationFragment"
+        android:label="Add Calculation"
+        tools:layout="@layout/user_insert" />
+</navigation>
